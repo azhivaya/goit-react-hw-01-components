@@ -26,17 +26,4 @@ export const App = () => {
 
   </div>);
 
-  // return (
-  //   <div> {user.map(({username, tag, location, avatar, stats}) => (
-  //     <Profile key={tag}
-  //       username={username}
-  //       tag={tag}
-  //       location={location}
-  //       avatar={avatar}
-  //       stats={stats}
-  //     />
-  //   ))}
-
-  //   </div>
-  // )
 };
