@@ -6,9 +6,12 @@ import user from './Profile/user.json';
 import data from './Statistics/data.json';
 import friends from './FriendList/friends.json';
 import transactions from './TransactionHistory/transactions.json'
+import { Box } from './Box';
 
+//each section wrap into Box and give styles 
 export const App = () => {
-  return (<div>
+  return (<Box>
+    
     <Profile
       key={user.tag}
       username={user.username}
@@ -24,6 +27,7 @@ export const App = () => {
 
     <TransactionHistory key={transactions.id} items={transactions} />
 
-  </div>);
+ 
+  </Box>);
 
 };
