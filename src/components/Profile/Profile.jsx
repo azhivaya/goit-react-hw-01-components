@@ -8,40 +8,40 @@
 // stats — объект с информацией об активности
 // Компонент должен создавать DOM элемент следующей структуры.
 import PropTypes from 'prop-types';
+import { Description, Avatar, StatsList, StatsItem, StatsQuantity, Username} from './Profile.styled';
 
 //className with {css.avatar} all className comes from css
 
 export const Profile = ({avatar, username, tag, location, stats } ) => {
     return (<div className="profile">
-        <div className="description">
-            <img
+        <Description>
+            <Avatar 
                 src={avatar}
                 alt="User avatar"
-                className="avatar"
             />
-            <p className="username">{username}</p>
-            <p className="tag">@{tag}</p>
-            <p className="location">{location}</p>
-        </div>
+            <Username>{username}</Username>
+            <p>@{tag}</p>
+            <p>{location}</p>
+        </Description>
 
-        <ul className="stats">
-            <li>
+        <StatsList>
+            <StatsItem>
                 <span className="label">Followers</span>
-                <span className="quantity">{stats.followers}</span>
-            </li>
-            <li>
+                <StatsQuantity>{stats.followers}</StatsQuantity>
+            </StatsItem>
+            <StatsItem>
                 <span className="label">Views</span>
-                <span className="quantity">{stats.views}</span>
-            </li>
-            <li>
+                <StatsQuantity>{stats.views}</StatsQuantity>
+            </StatsItem>
+            <StatsItem>
                 <span className="label">Likes</span>
-                <span className="quantity">{stats.likes}</span>
-            </li>
-        </ul>
-    </div>);
+                <StatsQuantity>{stats.likes}</StatsQuantity>
+            </StatsItem>
+        </StatsList>
+    </div>)
+        ;
 }
 
-// username with isRequired has a mistake in console that value is undefined 
 Profile.propTypes = {
     username: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,

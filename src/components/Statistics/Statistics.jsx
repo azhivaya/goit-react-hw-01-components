@@ -1,40 +1,32 @@
 import PropTypes from 'prop-types';
+import { StatisticsTitle, StatList, StatItem } from './Statistics.styled';
+import { Box } from '../Box';
 
 //title ? title : ''
-
+// const randomColor = Math.floor(Math.random()*16777215).toString(16);
 export const Statistics = ({ title, stats}) => {
-  return (<section className="statistics">
-      {title && <h2 className="title">{title}</h2>} 
-    
-    
-
-    <ul className="stat-list">
-      {stats.map(({ id, label, percentage }) => (
-        <li key={id} className="item">
-                <span className="label">{label}</span>
-                <span className="percentage">{percentage}</span>
-    </li>
-      )
+  return (
+    <>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
         
+      mb='40px'>
+      {title && <StatisticsTitle>{title}</StatisticsTitle>} 
+
+    <StatList>
+      {stats.map(({ id, label, percentage }) => (
+        <StatItem key={id}>
+                <span className="label">{label}</span>
+                <span className="percentage">{percentage}%</span>
+    </StatItem>
+      )
       )}
-    {/* <li className="item">
-                <span className="label">{stats.label}</span>
-                <span className="percentage">{stats.percentage}</span>
-    </li>
-    <li className="item">
-      <span className="label">{stats.label}</span>
-      <span className="percentage">{stats.percentage}</span>
-    </li>
-    <li className="item">
-      <span className="label">{stats.label}</span>
-      <span className="percentage">{stats.percentage}</span>
-    </li>
-    <li className="item">
-      <span className="label">{stats.label}</span>
-      <span className="percentage">{stats.percentage}</span>
-    </li> */}
-  </ul>
-</section>)
+  </StatList>
+      </Box>
+      </>)
+    
 }
 
 Statistics.propTypes = {
@@ -45,5 +37,3 @@ Statistics.propTypes = {
     percentage: PropTypes.number.isRequired,
   })),
 }
-
-//stats: PropTypes.arrayOf(PropTypes.object).isRequired,

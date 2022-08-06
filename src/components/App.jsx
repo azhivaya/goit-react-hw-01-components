@@ -7,27 +7,34 @@ import data from './Statistics/data.json';
 import friends from './FriendList/friends.json';
 import transactions from './TransactionHistory/transactions.json'
 import { Box } from './Box';
+import { GlobalStyle } from './GlobalStyle';
 
 //each section wrap into Box and give styles 
+//box for general wrapper for display margin padding  flex grid 
 export const App = () => {
-  return (<Box>
+  return (
+    <>
+     <GlobalStyle />
+      <Box display="flex"
+        alignItems='flex-start'
+        justifyContent='space-between'
+      p='20px'>
     
-    <Profile
-      key={user.tag}
+       <Profile
       username={user.username}
       tag={user.tag}
       location={user.location}
       avatar={user.avatar}
       stats={user.stats} />
-    
-    <Statistics key={data.id} title="Upload stats" stats={data}
+
+    <Statistics title="Upload stats" stats={data}
     />
     
-    <FriendList key={friends.id} friends={friends} />
+    <FriendList friends={friends} />
 
-    <TransactionHistory key={transactions.id} items={transactions} />
-
- 
-  </Box>);
+    <TransactionHistory items={transactions} />
+    </Box>
+  </>
+  );
 
 };
