@@ -6,7 +6,7 @@ import { Box } from '../Box';
 export const FriendList = ({ friends }) => {
 
     return (
-        <Box mb='20px'>
+        
         <ul className="friend-list">
         
         {friends.map(friend => (
@@ -20,7 +20,7 @@ export const FriendList = ({ friends }) => {
         
     )}
             </ul>
-            </Box>)
+           )
 }
 
 FriendList.propTypes = {

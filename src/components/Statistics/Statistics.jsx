@@ -1,34 +1,41 @@
 import PropTypes from 'prop-types';
-import { StatisticsTitle, StatList, StatItem } from './Statistics.styled';
+import { getRandomHexColor } from 'components/getRandomHexColor';
+import { StatisticsTitle, StatList } from './Statistics.styled';
 import { Box } from '../Box';
 
-//title ? title : ''
-// const randomColor = Math.floor(Math.random()*16777215).toString(16);
 export const Statistics = ({ title, stats}) => {
   return (
-    <>
       <Box
         display="flex"
         flexDirection="column"
-        alignItems="center"
-        
-      mb='40px'>
+      alignItems="center"
+     
+        >
       {title && <StatisticsTitle>{title}</StatisticsTitle>} 
 
-    <StatList>
-      {stats.map(({ id, label, percentage }) => (
-        <StatItem key={id}>
-                <span className="label">{label}</span>
-                <span className="percentage">{percentage}%</span>
-    </StatItem>
-      )
+        <StatList>
+          
+          {stats.map(({ id, label, percentage }) => (
+            <Box
+            key={id}
+            display= "flex"
+            flexDirection= "column"
+            alignItems= 'center'
+            bg={getRandomHexColor()}
+            p={3}
+            >
+              
+                <span>{label}</span>
+                <span>{percentage}%</span>
+              
+              </Box>)
       )}
   </StatList>
       </Box>
-      </>)
+      )
     
 }
-
+  
 Statistics.propTypes = {
     title: PropTypes.string,
   stats: PropTypes.arrayOf(PropTypes.shape({

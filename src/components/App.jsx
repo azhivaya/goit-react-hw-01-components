@@ -18,21 +18,30 @@ export const App = () => {
       <Box display="flex"
         alignItems='flex-start'
         justifyContent='space-between'
-      p='20px'>
-    
-       <Profile
+        p='20px'>
+        
+    <Box p='20px'>
+        <Profile
+          
       username={user.username}
       tag={user.tag}
       location={user.location}
       avatar={user.avatar}
-      stats={user.stats} />
+          stats={user.stats} />
+        </Box>
 
+        <Box p='20px'>
     <Statistics title="Upload stats" stats={data}
-    />
+          />
+        </Box>
     
-    <FriendList friends={friends} />
-
-    <TransactionHistory items={transactions} />
+        <Box p='20px'>
+          <FriendList friends={friends} />
+        </Box>
+        
+        <Box p='20px'>
+          <TransactionHistory items={transactions} />
+          </Box>
     </Box>
   </>
   );

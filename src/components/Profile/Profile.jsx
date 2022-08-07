@@ -1,19 +1,13 @@
-// Описание компонента <Profile>
-// Компонент должен принимать несколько пропсов с информацией о пользователе:
-
-// username — имя пользователя
-// tag — тег в социальной сети без @
-// location — город и страна
-// avatar — ссылка на изображение
-// stats — объект с информацией об активности
-// Компонент должен создавать DOM элемент следующей структуры.
+import { Box } from 'components/Box';
 import PropTypes from 'prop-types';
 import { Description, Avatar, StatsList, StatsItem, StatsQuantity, Username} from './Profile.styled';
 
 //className with {css.avatar} all className comes from css
 
 export const Profile = ({avatar, username, tag, location, stats } ) => {
-    return (<div className="profile">
+    return (
+        // <Box p='20px'>
+        <div className="profile">
         <Description>
             <Avatar 
                 src={avatar}
@@ -38,7 +32,9 @@ export const Profile = ({avatar, username, tag, location, stats } ) => {
                 <StatsQuantity>{stats.likes}</StatsQuantity>
             </StatsItem>
         </StatsList>
-    </div>)
+            </div>
+            // </Box >
+            )
         ;
 }
 
