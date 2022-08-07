@@ -1,41 +1,43 @@
 // import { Box } from 'components/Box';
+import { Box } from 'components/Box';
 import PropTypes from 'prop-types';
 import {
-  Description,
+  ProfileCard,
   Avatar,
   StatsList,
   StatsItem,
   StatsQuantity,
   Username,
+  TagStyle,
 } from './Profile.styled';
 
 export const Profile = ({ avatar, username, tag, location, stats }) => {
   return (
-    // <Box p='20px'>
-    <div className="profile">
-      <Description>
+    <ProfileCard>
+      <Box display="flex" flexDirection="column" alignItems="center" p={5}>
         <Avatar src={avatar} alt="User avatar" />
         <Username>{username}</Username>
-        <p>@{tag}</p>
+        <TagStyle>@{tag}</TagStyle>
         <p>{location}</p>
-      </Description>
+      </Box>
 
-      <StatsList>
-        <StatsItem>
-          <span className="label">Followers</span>
-          <StatsQuantity>{stats.followers}</StatsQuantity>
-        </StatsItem>
-        <StatsItem>
-          <span className="label">Views</span>
-          <StatsQuantity>{stats.views}</StatsQuantity>
-        </StatsItem>
-        <StatsItem>
-          <span className="label">Likes</span>
-          <StatsQuantity>{stats.likes}</StatsQuantity>
-        </StatsItem>
-      </StatsList>
-    </div>
-    // </Box >
+      <Box bg="grey">
+        <StatsList>
+          <StatsItem>
+            <span className="label">Followers</span>
+            <StatsQuantity>{stats.followers}</StatsQuantity>
+          </StatsItem>
+          <StatsItem>
+            <span className="label">Views</span>
+            <StatsQuantity>{stats.views}</StatsQuantity>
+          </StatsItem>
+          <StatsItem>
+            <span className="label">Likes</span>
+            <StatsQuantity>{stats.likes}</StatsQuantity>
+          </StatsItem>
+        </StatsList>
+      </Box>
+    </ProfileCard>
   );
 };
 

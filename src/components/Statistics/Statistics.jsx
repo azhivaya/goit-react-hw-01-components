@@ -5,7 +5,15 @@ import { Box } from '../Box';
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <Box display="flex" flexDirection="column" alignItems="center">
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      pt={4}
+      border="deepGrey"
+      // border="normal"
+      // borderColor="accent"
+    >
       {title && <StatisticsTitle>{title}</StatisticsTitle>}
 
       <StatList>
