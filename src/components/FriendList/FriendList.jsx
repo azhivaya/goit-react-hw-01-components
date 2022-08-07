@@ -1,7 +1,7 @@
 // import PropTypes from 'prop-types';
 import PropTypes from 'prop-types';
 import { FriendListItem } from './FriendListItem/FriendListItem';
-import { Box } from '../Box';
+// import { Box } from '../Box';
 
 export const FriendList = ({ friends }) => {
 

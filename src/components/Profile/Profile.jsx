@@ -1,4 +1,4 @@
-import { Box } from 'components/Box';
+// import { Box } from 'components/Box';
 import PropTypes from 'prop-types';
 import { Description, Avatar, StatsList, StatsItem, StatsQuantity, Username} from './Profile.styled';
 
